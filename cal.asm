@@ -36,8 +36,8 @@ include C:\irvine\Irvine32.inc
  
  main ENDP
  ;*******************************************************************************************
- Splitbyadd check all index until we found -or + operation 
- then splitbymul is called After return we check again all index after -or + operationAnd execute other operations
+ ;Splitbyadd check all index until we found -or + operation 
+ ;then splitbymul is called After return we check again all index after -or + operationAnd execute other operations
 ; *******************************************************************************************
  splitByAdd PROC
  
@@ -57,7 +57,7 @@ include C:\irvine\Irvine32.inc
 		  inc edi                              ;edi=edi+1
 		  JMP LOOP1 
  ;**********************************************************************************************************************
-  this function calculate the blocks before and after this '+' sign then, it executes the adding operation
+  ;this function calculate the blocks before and after this '+' sign then, it executes the adding operation
  ;**********************************************************************************************************************
 	ADD_Cont:
 		  push esi                               ; push all register which we need there valus later       
