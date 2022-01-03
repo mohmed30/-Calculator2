@@ -79,6 +79,32 @@
            pop eax                   ;RESTORES ORIGINAL EAX
            JMP Inc_lb1               ;JUMP INTO Inc_lb1
 	   
+	SUB_Cont:
+	   push esi
+	   push edi
+	   push edx
+	   push ecx
+	   call splitByMul
+	   pop ecx
+	   pop edx
+	   pop edi
+	   pop esi
+	   cmp CURR_SYM_ADD, '+'
+	   JE ADD_RES2
+	   MOV EAX, RES_MUL
+	   SUB RES_ADD, EAX
+	   JMP Cont_SUB
+	   ADD_RES2:
+	   MOV EAX, RES_MUL
+	   ADD RES_ADD, EAX
+	   Cont_SUB:
+	   MOV CURR_SYM_ADD, '-'
+	   MOV edi, -1
+	   push eax
+	   call resetstring1
+	   pop eax
+	   JMP Inc_lbl
+	   
 	End_Cont:
                   push esi       ;store value of the registers needed in splitbymul process
 	          push edi       
