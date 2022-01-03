@@ -26,11 +26,11 @@
 		
 .code
 
- main PROC                                ; main function
-          lea edx, stringIn               
-	  mov ecx, MAX+1
-	  call ReadString
-	  call splitByAdd	
+ main PROC                                
+          lea edx, stringIn                    ;move offset address of stringIn to edx
+	  mov ecx, MAX+1                       ;move MAX+1  to ecx it max string can be writen 
+	  call ReadString                      ;it Reads a string of up to ECX non-null characters from input, stopping when the user presses the Enter key.
+	  call splitByAdd	               
  
  main ENDP
  
