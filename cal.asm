@@ -78,6 +78,22 @@
            call resetstring1         ;RESETSTRING1 IS CALLED WHICH WILL PUT RETURN VALUE IN EAX
            pop eax                   ;RESTORES ORIGINAL EAX
            JMP Inc_lb1               ;JUMP INTO Inc_lb1
+	   
+	End_Cont:
+                  push esi       
+	          push edi       
+		  push edx
+		  push ecx
+		  call splitByMul
+		  pop ecx
+		  pop edx
+		  pop edi
+		  pop esi
+		  cmp CURR_SYM_ADD, '+'
+		  JE ADD_RES3
+		  MOV EAX, RES_MUL
+		  SUB RES_ADD, EAX
+		  JMP Cont_F2
  
  splitByAdd ENDP 
  
