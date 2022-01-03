@@ -38,6 +38,7 @@
  
 	   xor esi, esi
 	   xor edi, edi
+	
 	LOOP1:
 		  mov cl, [edx + esi]
 		  CMP cl, 0
@@ -65,7 +66,18 @@
 		  JE ADD_RES
 		  MOV EAX, RES_MUL
 		  SUB RES_ADD, EAX
-		  JMP Cont_ADD	  
+		  JMP Cont_ADD	 
+		
+	ADD_RES:
+           MOV EAX , RES_MUL         ;MOVE THE CONTENT IN RES_MUL INTO EAX REGISTRY
+           ADD RES_ADD , EAX         ;ADDS THE TWO OPREANDS (EAX & RES_ADD) TOGETHER
+           Cont_ADD : 
+           MOV CURR_SYM_ADD, '+'     ;COPIES THE + SYMBOL INTO CURR_SYM_ADD
+           MOV edi , -1              ;RESETS THE POINTER TO -1 OF THE PREVIOUS ADDRESS
+           push EAX                  ;PRESERVE THE VALUE OF EAX 
+           call resetstring1         ;RESETSTRING1 IS CALLED WHICH WILL PUT RETURN VALUE IN EAX
+           pop eax                   ;RESTORES ORIGINAL EAX
+           JMP Inc_lb1               ;JUMP INTO Inc_lb1
  
  splitByAdd ENDP 
  
