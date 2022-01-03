@@ -36,5 +36,20 @@
  
  splitByAdd PROC
  
+	   xor esi, esi
+	   xor edi, edi
+	LOOP1:
+		  mov cl, [edx + esi]
+		  CMP cl, 0
+		  JE End_Cont
+		  cmp cl, SYM_ADD
+		  JE ADD_Cont
+		  cmp cl, SYM_SUB
+		  JE SUB_Cont
+		  mov [string1 + edi], cl
+		  Inc_lbl: inc esi
+		  inc edi
+		  JMP LOOP1
+ 
  splitByAdd ENDP 
  
