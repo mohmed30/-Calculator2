@@ -57,12 +57,12 @@ include C:\irvine\Irvine32.inc
   this function calculate the blocks before and after this '+' sign then, it executes the adding operation
  **********************************************************************************************************************
 	ADD_Cont:
-		  push esi                               
+		  push esi                               ; push all register which we need there valus later       
 		  push edi
 		  push edx
 		  push ecx
 		  call splitByMul
-		  pop ecx
+		  pop ecx                            ; pop all register because we back to function again    
 		  pop edx
 		  pop edi
 		  pop esi
