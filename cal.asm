@@ -80,16 +80,16 @@
            JMP Inc_lb1               ;JUMP INTO Inc_lb1
 	   
 	End_Cont:
-                  push esi       
+                  push esi       ;store value of the registers needed in splitbymul process
 	          push edi       
 		  push edx
 		  push ecx
-		  call splitByMul
-		  pop ecx
+		  call splitByMul         
+		  pop ecx                ;restore the values after the process
 		  pop edx
 		  pop edi
 		  pop esi
-		  cmp CURR_SYM_ADD, '+'
+		  cmp CURR_SYM_ADD, '+'    
 		  JE ADD_RES3
 		  MOV EAX, RES_MUL
 		  SUB RES_ADD, EAX
