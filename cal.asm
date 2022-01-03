@@ -40,17 +40,17 @@
 	   xor edi, edi
 	
 	LOOP1:
-		  mov cl, [edx + esi]
-		  CMP cl, 0
-		  JE End_Cont
-		  cmp cl, SYM_ADD
-		  JE ADD_Cont
-		  cmp cl, SYM_SUB
-		  JE SUB_Cont
-		  mov [string1 + edi], cl
-		  Inc_lbl: inc esi
-		  inc edi
-		  JMP LOOP1
+		  mov cl, [edx + esi]                  ; mov  data segment memory location addressed by edx and esi to cl
+		  CMP cl, 0                            ;compare cl with 0
+		  JE End_Cont                          ; if equal jum to End_Cont
+		  cmp cl, SYM_ADD                      ;compare cl with '+'   
+		  JE ADD_Cont                          ;if equal jum to ADD_Cont         
+		  cmp cl, SYM_SUB                      ;compare cl with SYM_SUB
+		  JE SUB_Cont                          ;if equal jum to SUB_Cont
+		  mov [string1 + edi], cl              ; mov cl to data segment memory location addressed by string1 and  edi
+		  Inc_lbl: inc esi                     ;esi =esi+1 
+		  inc edi                              ;edi=edi+1
+		  JMP LOOP1 
 		  
 	ADD_Cont:
 		  push esi
