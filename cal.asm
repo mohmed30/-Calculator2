@@ -50,6 +50,22 @@
 		  Inc_lbl: inc esi
 		  inc edi
 		  JMP LOOP1
+		  
+	ADD_Cont:
+		  push esi
+		  push edi
+		  push edx
+		  push ecx
+		  call splitByMul
+		  pop ecx
+		  pop edx
+		  pop edi
+		  pop esi
+		  cmp CURR_SYM_ADD, '+'
+		  JE ADD_RES
+		  MOV EAX, RES_MUL
+		  SUB RES_ADD, EAX
+		  JMP Cont_ADD	  
  
  splitByAdd ENDP 
  
