@@ -57,7 +57,7 @@ include C:\irvine\Irvine32.inc
   this function calculate the blocks before and after this '+' sign then, it executes the adding operation
  **********************************************************************************************************************
 	ADD_Cont:
-		  push esi
+		  push esi                               
 		  push edi
 		  push edx
 		  push ecx
@@ -66,11 +66,11 @@ include C:\irvine\Irvine32.inc
 		  pop edx
 		  pop edi
 		  pop esi
-		  cmp CURR_SYM_ADD, '+'
-		  JE ADD_RES
-		  MOV EAX, RES_MUL
-		  SUB RES_ADD, EAX
-		  JMP Cont_ADD	 
+		  cmp CURR_SYM_ADD, '+'           ; compare CURR_SYM_ADD with '+' 
+		  JE ADD_RES                      ;if equal jump to ADD_RES
+		  MOV EAX, RES_MUL                ; not,, move RES_MUL to EAX 
+		  SUB RES_ADD, EAX                ;Subtract RES_ADD from EAX
+		  JMP Cont_ADD	                  ; jump to Cont_ADD
 		
 	ADD_RES:
            MOV EAX , RES_MUL         ;MOVE THE CONTENT IN RES_MUL INTO EAX REGISTRY
