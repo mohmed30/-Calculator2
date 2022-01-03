@@ -38,8 +38,8 @@ include C:\irvine\Irvine32.inc
  
  splitByAdd PROC
  
-	   xor esi, esi
-	   xor edi, edi
+	   xor esi, esi                               ; make esi = zero
+	   xor edi, edi                               ; make edi =zero 
 	
 	LOOP1:
 		  mov cl, [edx + esi]                  ; mov  data segment memory location addressed by edx and esi to cl
@@ -53,7 +53,9 @@ include C:\irvine\Irvine32.inc
 		  Inc_lbl: inc esi                     ;esi =esi+1 
 		  inc edi                              ;edi=edi+1
 		  JMP LOOP1 
-		  
+ **********************************************************************************************************************
+  this function calculate the blocks before and after this '+' sign then, it executes the adding operation
+ **********************************************************************************************************************
 	ADD_Cont:
 		  push esi
 		  push edi
