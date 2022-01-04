@@ -168,6 +168,18 @@ include C:\irvine\Irvine32.inc
 		 inc esi
 		 inc edi
 	       	 JMP LOOP2
+		
+	MUL_Cont:
+		 lea edx, string2       ;load effective address of string2 into eda
+		 call ParseInteger32
+		 cmp CURR_SYM_MUL, '*'  ;compare CURR_SYM_ADD with '*'
+		 JE MUL_RES             ; if the previous command is equal jump to MUL_RES
+		 MOV PARSE_RES, EAX     ; COPIES THE EAX content  INTO PARSE_RES
+		 MOV EAX, RES_MUL       ; COPIES THE RES_MUL content  INTO EAX
+		 mov edx, 0             ; set EDX to zero 
+		 IDIV PARSE_RES         ; signed integer division to PARSE_RES
+		 MOV RES_MUL, EAX
+		 JMP Cont_MUL           ; jump to Cont_MUL 
 		 
 	 MUL_RES:
 		 IMUL RES_MUL
