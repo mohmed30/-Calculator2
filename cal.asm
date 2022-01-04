@@ -86,6 +86,10 @@ include C:\irvine\Irvine32.inc
            pop eax                   ;RESTORES ORIGINAL EAX
            JMP Inc_lb1               ;JUMP INTO Inc_lb1
 	   
+ ;**********************************************************************************************************************
+  ;this function calculate the blocks before and after this '-' sign then, it executes the subtracting process.
+ ;**********************************************************************************************************************
+ 
 	SUB_Cont:
 	   push esi
 	   push edi
