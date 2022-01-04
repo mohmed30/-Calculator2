@@ -115,6 +115,7 @@ include C:\irvine\Irvine32.inc
 	   call resetstring1
 	   pop eax
 	   JMP Inc_lbl
+	
 	   
 	End_Cont:
                   push esi       ;store value of the registers needed in splitbymul process
