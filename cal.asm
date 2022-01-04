@@ -127,6 +127,24 @@ include C:\irvine\Irvine32.inc
 		  MOV EAX, RES_MUL
 		  SUB RES_ADD, EAX
 		  JMP Cont_F2
+		  
+		  ADD_RES3:
+		  MOV EAX, RES_MUL
+		  ADD RES_ADD, EAX
+
+	Cont_F2:
+		  MOV CURR_SYM_ADD, '+'
+		  push eax
+		  call resetstring1
+		  pop eax
+		  ret
  
  splitByAdd ENDP 
+ 
+ splitByMul PROC
+ 
+ 
+ splitByMul ENDP
+
+
  
