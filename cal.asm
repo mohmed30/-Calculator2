@@ -115,7 +115,6 @@ include C:\irvine\Irvine32.inc
 	   call resetstring1
 	   pop eax
 	   JMP Inc_lbl
-	
 	   
 	End_Cont:
                   push esi       ;store value of the registers needed in splitbymul process
@@ -181,6 +180,21 @@ include C:\irvine\Irvine32.inc
 		 call resetstring2
 		 pop eax
 		 JMP Inc_lb2
+	  
+	 DIV_Cont:
+		 lea edx, string2
+		 call ParseInteger32
+		 cmp CURR_SYM_MUL, '*'
+		 JE MUL_RES2
+		 cmp EAX, '0'
+		 JE Error
+		 MOV PARSE_RES, EAX
+		 MOV EAX, RES_MUL
+		 MOV edx, 0
+		 IDIV PARSE_RES
+		 MOV RES_MUL, EAX
+		 JMP Cont_DIV
+	      
 		 
        
  
