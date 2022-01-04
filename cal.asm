@@ -143,6 +143,28 @@ include C:\irvine\Irvine32.inc
  
  splitByMul PROC
  
+		 MOV RES_MUL, 1
+		 xor esi, esi                     ; make esi = zero 
+		 xor edi, edi
+		 xor ebx, ebx
+		 xor ecx, ecx
+		 lea edx, string2                 ; move offeset address of string2  to edx
+		 
+	LOOP2:
+		 mov bl, [string1 + esi]
+		 cmp bl, SYM_MUL
+		 JE MUL_Cont
+		 cmp bl, SYM_DIV
+		 JE DIV_Cont
+		 CMP bl, 0
+		 JE End_Cont2
+		 mov [string2 + edi], bl
+		 inc ecx
+		 Inc_lb2:
+		 inc esi
+		 inc edi
+	       	 JMP LOOP2
+ 
  
  splitByMul ENDP
 
