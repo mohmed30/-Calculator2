@@ -169,6 +169,18 @@ include C:\irvine\Irvine32.inc
 		 inc edi
 	       	 JMP LOOP2
 		 
+	 MUL_RES:
+		 IMUL RES_MUL
+		 MOV RES_MUL, EAX
+		 Cont_MUL:
+		 MOV CURR_SYM_MUL, '*'
+		 MOV edi, -1
+		 MOV ecx, 0
+		 push eax
+		 call resetstring2
+		 pop eax
+		 JMP Inc_lb2
+		 
        
  
  
