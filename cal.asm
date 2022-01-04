@@ -164,6 +164,8 @@ include C:\irvine\Irvine32.inc
 		 inc esi
 		 inc edi
 	       	 JMP LOOP2
+		 
+       
  
  
  splitByMul ENDP
