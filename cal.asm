@@ -88,7 +88,7 @@ include C:\irvine\Irvine32.inc
            push EAX                  ;PRESERVE THE VALUE OF EAX 
            call resetstring1         ;RESETSTRING1 IS CALLED WHICH WILL PUT RETURN VALUE IN EAX
            pop eax                   ;RESTORES ORIGINAL EAX
-           JMP Inc_lb1               ;JUMP INTO Inc_lb1
+           JMP Inc_lbl              ;JUMP INTO Inc_lbl
 	   
  ;**********************************************************************************************************************
   ;this function calculate the blocks before and after this '-' sign then, it executes the subtracting process.
