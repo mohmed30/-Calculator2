@@ -224,6 +224,21 @@ include C:\irvine\Irvine32.inc
 		 call resetstring2
 		 pop eax
 		 JMP Inc_lb2 
+		 
+		 
+	  End_Cont2:
+		 lea edx, string2
+		 call ParseInteger32
+		 cmp CURR_SYM_MUL, '*'
+		 JE MUL_RES3
+		 MOV PARSE_RES, EAX
+		 MOV EAX, RES_MUL
+		 cmp PARSE_RES , Zero
+		 JE Error
+		 mov edx, 0
+		 IDIV PARSE_RES
+		 MOV RES_MUL, EAX
+		 JMP Cont_F
 
        
  
