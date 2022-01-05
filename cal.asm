@@ -261,7 +261,12 @@ include C:\irvine\Irvine32.inc
  
  
  splitByMul ENDP
-
+ 
+;*******************************************************************************************
+ ;function name : resetstring2
+ ;description : it reset all values in array
+ ;for using it again
+;******************************************************************************************* 
 	  resetstring2 PROC
 		mov eax, 0
 		LOOP4: cmp eax, MAX+1
