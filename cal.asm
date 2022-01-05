@@ -239,6 +239,23 @@ include C:\irvine\Irvine32.inc
 		 IDIV PARSE_RES
 		 MOV RES_MUL, EAX
 		 JMP Cont_F
+		 
+	  MUL_RES3:
+		 IMUL RES_MUL
+		 MOV RES_MUL, EAX
+	   Cont_F:
+		 MOV CURR_SYM_MUL, '*'
+		 push eax
+		 call resetstring2
+		 pop eax
+		 JMP finish
+
+	   Error:
+		  mov edx, OFFSET errorMag    
+		  CALL WriteString
+		  INVOKE ExitProcess,0
+			  
+          finish: ret
 
        
  
