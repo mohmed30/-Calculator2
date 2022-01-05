@@ -32,7 +32,11 @@ include C:\irvine\Irvine32.inc
           lea edx, stringIn                    ;move offset address of stringIn to edx
 	  mov ecx, MAX+1                       ;move MAX+1  to ecx it max string can be writen 
 	  call ReadString                      ;it Reads a string of up to ECX non-null characters from input, stopping when the user presses the Enter key.
-	  call splitByAdd	               
+	  call splitByAdd
+	  mov eax, RES_ADD 
+          call writeint
+	  INVOKE ExitProcess,0
+   
  
  main ENDP
  ;*******************************************************************************************
