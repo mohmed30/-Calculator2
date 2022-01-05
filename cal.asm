@@ -205,9 +205,22 @@ include C:\irvine\Irvine32.inc
 		 MOV edx, 0
 		 IDIV PARSE_RES
 		 MOV RES_MUL, EAX
-		 JMP Cont_DIV
+		 JMP Cont_DIV  
+
+
 	      
-		 
+	MUL_RES2:
+		 IMUL RES_MUL
+		 MOV RES_MUL, EAX
+		 Cont_DIV:
+		 MOV CURR_SYM_MUL, '/'
+		 MOV edi, -1
+		 mov ecx, 0
+		 push eax
+		 call resetstring2
+		 pop eax
+		 JMP Inc_lb2 
+
        
  
  
