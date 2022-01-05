@@ -261,7 +261,20 @@ include C:\irvine\Irvine32.inc
  
  
  splitByMul ENDP
- 
+ ;*******************************************************************************************
+ ;function name : resetstring1
+ ;description : it reset all values in array
+ ;for using it again
+;*******************************************************************************************
+          resetstring1 PROC
+		mov eax, 0
+		LOOP3: cmp eax, MAX+1
+		JG Finish                 ; if EAX >= MAX+1, jump to Finish
+		MOV [string1 + eax], 0    
+		inc eax     
+		JMP LOOP3
+	Finish: ret
+	resetstring1 ENDP
 ;*******************************************************************************************
  ;function name : resetstring2
  ;description : it reset all values in array
