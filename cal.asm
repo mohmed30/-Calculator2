@@ -255,12 +255,22 @@ include C:\irvine\Irvine32.inc
 		  CALL WriteString
 		  INVOKE ExitProcess,0
 			  
-          finish: ret
+          Finish: ret
 
        
  
  
  splitByMul ENDP
 
+	  resetstring2 PROC
+		mov eax, 0
+		LOOP4: cmp eax, MAX+1
+		JG Finish
+		MOV [string2 + eax], 0
+		inc eax
+		JMP LOOP4
+	  Finish: ret
+	  resetstring2 ENDP
+	  END main		
 
  
