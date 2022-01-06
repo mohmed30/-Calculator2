@@ -187,7 +187,8 @@ include C:\irvine\Irvine32.inc
 	 MUL_RES:
 		 IMUL RES_MUL
 		 MOV RES_MUL, EAX
-		 Cont_MUL:
+		 
+	Cont_MUL:
 		 MOV CURR_SYM_MUL, '*'
 		 MOV edi, -1
 		 MOV ecx, 0
@@ -215,7 +216,9 @@ include C:\irvine\Irvine32.inc
 	MUL_RES2:
 		 IMUL RES_MUL
 		 MOV RES_MUL, EAX
-		 Cont_DIV:
+		 
+		 
+	Cont_DIV:
 		 MOV CURR_SYM_MUL, '/'
 		 MOV edi, -1
 		 mov ecx, 0
@@ -242,6 +245,8 @@ include C:\irvine\Irvine32.inc
 	  MUL_RES3:
 		 IMUL RES_MUL
 		 MOV RES_MUL, EAX
+		 
+		 
 	   Cont_F:
 		 MOV CURR_SYM_MUL, '*'
 		 push eax
@@ -288,6 +293,8 @@ include C:\irvine\Irvine32.inc
 		JMP LOOP4
 	  Finish: ret
 	  resetstring2 ENDP
-	  END main		
+	  
+	  
+END main		
 
  
