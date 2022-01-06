@@ -81,7 +81,9 @@ include C:\irvine\Irvine32.inc
 	ADD_RES:
            MOV EAX , RES_MUL         ;MOVE THE CONTENT IN RES_MUL INTO EAX REGISTRY
            ADD RES_ADD , EAX         ;ADDS THE TWO OPREANDS (EAX & RES_ADD) TOGETHER
-           Cont_ADD : 
+	   
+	   
+        Cont_ADD : 
            MOV CURR_SYM_ADD, '+'     ;COPIES THE + SYMBOL INTO CURR_SYM_ADD
            MOV edi , -1              ;RESETS THE POINTER TO -1 OF THE PREVIOUS ADDRESS
            push EAX                  ;PRESERVE THE VALUE OF EAX 
@@ -93,7 +95,7 @@ include C:\irvine\Irvine32.inc
   ;this function calculate the blocks before and after this '-' sign then, it executes the subtracting process.
  ;**********************************************************************************************************************
  
-	SUB_Cont:
+     SUB_Cont:
 	   push esi
 	   push edi
 	   push edx
@@ -108,10 +110,12 @@ include C:\irvine\Irvine32.inc
 	   MOV EAX, RES_MUL
 	   SUB RES_ADD, EAX
 	   JMP Cont_SUB
-	   ADD_RES2:
+	   
+     ADD_RES2:
 	   MOV EAX, RES_MUL
 	   ADD RES_ADD, EAX
-	   Cont_SUB:
+	   
+     Cont_SUB:
 	   MOV CURR_SYM_ADD, '-'
 	   MOV edi, -1
 	   push eax
