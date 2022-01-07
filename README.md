@@ -13,7 +13,7 @@ then when the '+' or '-' is present the program will calculate whatever the oper
 
 In the main process first the index of the stringin is stored in edx register and we store in ecx register max+1
 which is equal to 101 then we call the irvine function  (readstring) which takes edx point to the input buffer and 
-ecx is the maximum numper of the non null characthers and then it will store the size of the input string in eax register
+ecx is the maximum numper of the non null characthers and then it will store the size of the input string in eax register.
 
 Then the process spiltbyadd is called. This function itrate on the stringin till it founds a + or - sign that when it will take
 what ever was behind that sign lets say for example it was just a number such as (5+...) or an operation like multiplication or division 
