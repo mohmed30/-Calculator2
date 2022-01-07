@@ -56,7 +56,10 @@ include C:\irvine\Irvine32.inc
 		  cmp cl, SYM_SUB                      ;compare cl with SYM_SUB
 		  JE SUB_Cont                          ;if equal jum to SUB_Cont
 		  mov [string1 + edi], cl              ; mov cl to data segment memory location addressed by string1 and  edi
-		  Inc_lbl: inc esi                     ;esi =esi+1 
+		 
+
+        Inc_lbl: 
+                  inc esi                     ;esi =esi+1 
 		  inc edi                              ;edi=edi+1
 		  JMP LOOP1 
  ;**********************************************************************************************************************
@@ -171,7 +174,9 @@ include C:\irvine\Irvine32.inc
 		 JE End_Cont2
 		 mov [string2 + edi], bl
 		 inc ecx
-		 Inc_lb2:
+		
+
+        Inc_lb2:
 		 inc esi
 		 inc edi
 	       	 JMP LOOP2
