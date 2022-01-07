@@ -155,7 +155,7 @@ include C:\irvine\Irvine32.inc
 		  push eax
 		  call resetstring1
 		  pop eax
-		  ret
+		  ret                        ; go back to main process
  
  splitByAdd ENDP
  
