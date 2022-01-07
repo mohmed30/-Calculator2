@@ -300,7 +300,8 @@ include C:\irvine\Irvine32.inc
 ;*******************************************************************************************
           resetstring1 PROC
 		mov eax, 0
-		LOOP3: cmp eax, MAX+1
+	  LOOP3:
+		cmp eax, MAX+1
 		JG Finish                 ; if EAX >= MAX+1, jump to Finish
 		MOV [string1 + eax], 0    
 		inc eax     
@@ -314,7 +315,8 @@ include C:\irvine\Irvine32.inc
 ;******************************************************************************************* 
 	  resetstring2 PROC
 		mov eax, 0
-		LOOP4: cmp eax, MAX+1
+	   LOOP4:
+		cmp eax, MAX+1
 		JG Finish
 		MOV [string2 + eax], 0
 		inc eax
