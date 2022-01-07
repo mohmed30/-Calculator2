@@ -125,6 +125,10 @@ include C:\irvine\Irvine32.inc
 	   call resetstring1
 	   pop eax
 	   JMP Inc_lbl
+	
+;****************************************************************************************************************
+;this function will be executed when the string is empty which is the end of the string so, this function gets the final value of the equation.
+;****************************************************************************************************************
 	   
 	End_Cont:
                   push esi       ;store value of the registers needed in splitbymul process
@@ -153,8 +157,12 @@ include C:\irvine\Irvine32.inc
 		  pop eax
 		  ret
  
- splitByAdd ENDP 
+ splitByAdd ENDP
  
+ ******************************************************************************************************************
+ ;splitByMul check all index until we found * or / operation 
+ ;then splitbymul is called After return we check again all index after / or * operationAnd execute other operations
+ ******************************************************************************************************************
  splitByMul PROC
  
 		 MOV RES_MUL, 1
@@ -180,7 +188,11 @@ include C:\irvine\Irvine32.inc
 		 inc esi
 		 inc edi
 	       	 JMP LOOP2
-		
+	
+;*****************************************************************************************************************
+;this function is called when the process character (sym-mul) after or before the '-' or '+' signs is the '*' process character so,
+;a multiplication process is performed.
+;*****************************************************************************************************************
 	MUL_Cont:
 		 lea edx, string2       ;load effective address of string2 into eda
 		 call ParseInteger32
@@ -205,6 +217,11 @@ include C:\irvine\Irvine32.inc
 		 call resetstring2
 		 pop eax
 		 JMP Inc_lb2
+		 
+;*************************************************************************************************************
+;this function is called when the process character (sym-mul) after or before the '-' or '+' signs is the '*' process character so,
+;a division  process is performed.
+;*************************************************************************************************************
 	  
 	 DIV_Cont:
 		 lea edx, string2
@@ -235,8 +252,10 @@ include C:\irvine\Irvine32.inc
 		 call resetstring2
 		 pop eax
 		 JMP Inc_lb2 
-		 
-		 
+
+
+;************************************************************************************************************************
+;************************************************************************************************************************
 	  End_Cont2:
 		 lea edx, string2
 		 call ParseInteger32
@@ -272,8 +291,8 @@ include C:\irvine\Irvine32.inc
 
        
  
- 
  splitByMul ENDP
+ 
  ;*******************************************************************************************
  ;function name : resetstring1
  ;description : it reset all values in array
