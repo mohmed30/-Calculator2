@@ -255,6 +255,7 @@ include C:\irvine\Irvine32.inc
 
 
 ;************************************************************************************************************************
+;this function will be executed when the string is empty which is the end of the string so, this function gets the final value of the equation.
 ;************************************************************************************************************************
 	  End_Cont2:
 		 lea edx, string2
